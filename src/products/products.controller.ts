@@ -1,14 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
+import { ProductsService } from './products.service';
 
 @Controller('products')
 export class ProductsController {
+    // this.productsService = new ProductsService() 等价于 constructor 方式
+    constructor(private productsService: ProductsService){}
     @Get()
     getProductsList(): any{
-        return {
-            code: 0,
-            data: ['huawei', 'changcheng', 'biyadi'],
-            msg: '请求产品列表成功'
-        }
+        return this.productsService.getProductsList()
     }
 }
 
