@@ -1,0 +1,9 @@
+# POST http://localhost:3000/api/products/addProducts HTTP/1.1
+# GET  http://localhost:3000/api/products/getProductsList HTTP/1.1
+# GET  http://localhost:3000/api/products/getProductsById?id=1 HTTP/1.1
+POST http://localhost:3000/api/products/addProducts2
+Content-Type: application/json
+
+{
+    "id": 1
+}
