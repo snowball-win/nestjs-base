@@ -51,4 +51,34 @@ export class ProductsService {
         }
         return resJson;
     }
+    getProductsByIdRouter(id:number){
+        let resJson:any = {}
+        switch (id) {
+            case 1:
+                resJson = {id:1, name: 'huawei', type: 'shouji'}
+            break;
+            case 2:
+                resJson = {id:2, name: 'changcheng', type: 'qiche'}
+            break;
+            case 3:
+                resJson = {id:3, name: 'biyadi', type: 'qiche'}
+            break;
+        }
+        return resJson;
+    }
+    getProductsByIdRouter2(id:number, name:string = "huawei"){
+        let resJson:any = {}
+        switch (id) {
+            case 1:
+                resJson = {id:1, name: name, type: 'shouji'}
+            break;
+            case 2:
+                resJson = {id:2, name: name, type: 'qiche'}
+            break;
+            case 3:
+                resJson = {id:3, name: name, type: 'qiche'}
+            break;
+        }
+        return resJson;
+    }
 }
