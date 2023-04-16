@@ -6,7 +6,8 @@ import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 // BaseEntity：继承基础实体类
 
 @Entity()
-export class ProductsEntity extends BaseEntity {
+// Products需要与数据表同名
+export class Products extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

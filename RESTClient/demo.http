@@ -3,10 +3,35 @@
 # GET  http://localhost:3000/api/products/getProductsById?id=1 HTTP/1.1
 # GET  http://localhost:3000/api/products/getProductsByIdRouter/1 HTTP/1.1
 # GET  http://localhost:3000/api/products/getProductsByIdRouter/1/huawei-mate-60 HTTP/1.1
-GET  http://localhost:3000/api/products/list HTTP/1.1
+# GET  http://localhost:3000/api/products/list HTTP/1.1
+# GET  http://localhost:3000/api/products/getProductById?id=1 HTTP/1.1
 # POST http://localhost:3000/api/products/addProducts2
 # Content-Type: application/json
 
 # {
 #     "id": 1
 # }
+# 增加产品
+# POST http://localhost:3000/api/products/addProduct
+# Content-Type: application/json
+
+# {
+#     "name": "biyadi",
+#     "type": "qiche"
+# }
+# update产品
+# POST http://localhost:3000/api/products/updateProduct
+# Content-Type: application/json
+
+# {
+#     "id": 3,
+#     "name": "biyadi-1",
+#     "type": "qiche-1"
+# }
+# 删除产品
+POST http://localhost:3000/api/products/delProduct
+Content-Type: application/json
+
+{
+    "id": 3
+}
