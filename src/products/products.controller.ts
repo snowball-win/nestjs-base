@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Request, Query, Body, Param } from '@nestjs/common';
 import { ProductsService } from './products.service';
+import { ProductsEntity } from '../entities/products.entity';
 
 @Controller('products')
 export class ProductsController {
@@ -48,6 +49,11 @@ export class ProductsController {
         let id:number = parseInt(Params.id)
         let name:string = Params.name
         return this.productsService.getProductsByIdRouter2(id, name)
+    }
+    // 通过数据库查询产品list
+    @Get('list')
+    findAll(): Promise<ProductsEntity[]> {
+        return this.productsService.findAll();
     }
 }
 
