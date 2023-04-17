@@ -95,15 +95,15 @@ export class ProductsService {
         return await this.productsRepository.query('select * from products');
     }
     // 通过id查询产品
-    async getProductById(id): Promise<Products> {
+    async getProductById(id:number): Promise<Products> {
         return await this.productsRepository.findOne({where:{id: id}});
     }
     // 新增产品
-    async addProduct(product): Promise<any> {
+    async addProduct(product:object): Promise<any> {
         return await this.productsRepository.insert(product);
     }
     // 更新产品
-    async updateProduct(product): Promise<string> {
+    async updateProduct(product:any): Promise<string> {
         let res = await this.productsRepository.update({ id: product.id }, product);
         if(res){
             return "更新成功"
@@ -112,7 +112,7 @@ export class ProductsService {
         }
     }
     // 删除产品
-    async delProduct(params): Promise<object> {
+    async delProduct(params:any): Promise<object> {
         let res = await this.productsRepository.delete({ id: params.id });
         if(res){
             return {
